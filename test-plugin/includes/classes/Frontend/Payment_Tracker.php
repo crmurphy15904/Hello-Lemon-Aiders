@@ -32,10 +32,14 @@ class Payment_Tracker {
   /**
    * Initialize test data
    *
+   * NOTE: This uses hard-coded test data for first iteration development.
+   * In future iterations, this should be replaced with database queries
+   * or configurable data sources.
+   *
    * @return void
    */
   private function init_test_data() {
-    // Hard-coded test data for development purposes
+    // Hard-coded test data for development purposes (non-persistent across sessions)
     $this->payment_data = array(
       array(
         'user' => 'User 1',
