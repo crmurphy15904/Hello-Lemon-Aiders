@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Company\Test_Plugin\Backend;
 

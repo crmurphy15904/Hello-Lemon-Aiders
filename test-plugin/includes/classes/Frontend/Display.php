@@ -28,6 +28,17 @@ class Display {
    */
   public function init() {
     // Register shortcodes here
+    add_shortcode('payment_tracker', array($this, 'render_payment_tracker_shortcode'));
+  }
+  
+  /**
+   * Render payment tracker shortcode
+   *
+   * @return string
+   */
+  public function render_payment_tracker_shortcode() {
+    $payment_tracker = new Payment_Tracker($this->plugin);
+    return $payment_tracker->render_payment_tracker();
   }
   
 }

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 namespace Company\Test_Plugin\Frontend;
 
@@ -47,7 +47,8 @@ class Enqueue {
    * @return void
    */
   private function enqueue_styles() {
-    // Enqueue your styles
+    // Enqueue payment tracker styles
+    wp_enqueue_style('test-plugin-payment-tracker', plugins_url('/css/frontend/payment-tracker.css', $this->plugin), array(), Utils::get_plugin_version());
   }
   
   /**
@@ -65,6 +66,9 @@ class Enqueue {
       )
     );
     wp_set_script_translations('test-plugin-email', 'test-plugin', plugin_dir_path($this->plugin) . '/languages/');
+    
+    // Enqueue payment tracker script
+    wp_enqueue_script('test-plugin-payment-tracker', plugins_url('/js/frontend/payment-tracker.js', $this->plugin), array('jquery'), Utils::get_plugin_version(), true);
   }
   
 }
